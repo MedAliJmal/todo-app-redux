@@ -37,9 +37,9 @@ const todoReducer = (state = initialState, { type, payload }) => {
         ),
       };
     case FILTERCOM_TASK : 
-    return {...state,todos:state.isDone.map().filter((elt) => elt.isDone === true)};
+    return {...state,todos:state.isDone.filter((elt) => elt.isDone === true)};
     case FILTERUNC_TASK :
-      return {...state,todos:state.isDone.map().filter((elt) => elt.isDone === false)};
+      return {...state,todos:state.isDone.filter((elt) => elt.isDone === false)};
     default:
       return state;
   }
