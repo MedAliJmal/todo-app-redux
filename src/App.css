@@ -153,6 +153,7 @@ body {
 
 .fa-trash,
 .fa-edit,
+.fa-calendar-check,
 .fa-check {
   pointer-events: none;
 }
@@ -231,4 +232,19 @@ select {
   background-position-x: 130px;
   background-position-y: 0px  ;
   width: 100%;
+}
+
+.filter-btn {
+
+  height: 30px;
+  width: 120px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filter-btn p {
+  margin-top: 15px;
+  font-size: 130%;
 }

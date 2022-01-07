@@ -3,11 +3,14 @@ import { useSelector } from 'react-redux'
 import TaskItem from '../taskItem/TaskItem'
 
 const TaskList = () => {
-    const tasks = useSelector(state => state.todoReducer.todos)
+    const {todos,filter} = useSelector(state => state.todoReducer)
     return (
         
         <div className='todo-list'>
-            {tasks.map((elt,index)=> <TaskItem todo={elt} key={index}/> )}
+            
+        { !filter ? 
+            todos.map((elt,index)=> <TaskItem todo={elt} key={index}/> ) : todos.filter(todo=>!todo.isDone).map((elt,index)=> <TaskItem todo={elt} key={index}/> )
+        }
         </div>
     )
 }

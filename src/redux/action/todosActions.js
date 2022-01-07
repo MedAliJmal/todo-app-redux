@@ -1,4 +1,4 @@
-import { ADD_TASK, COMPLETE_TASK, DELETE_TASK, EDIT_TASK, FILTERCOM_TASK, FILTERUNC_TASK } from "../types";
+import { ADD_TASK, COMPLETE_TASK, DELETE_TASK, EDIT_TASK, FILTER_TASK,} from "../types";
 
 export const completeTask = (payload) => ({
     type: COMPLETE_TASK,
@@ -22,12 +22,8 @@ export const editTask = (id,value) => ({
     payload:{id,value}
 })
 
-export const completedTask = (payload) => ({
-    type: FILTERCOM_TASK,
-    payload
+export const filterTask = () => ({
+    type: FILTER_TASK,
+
 })
 
-export const uncompletedTask = (payload) => ({
-    type: FILTERUNC_TASK,
-    payload
-})

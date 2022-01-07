@@ -1,8 +1,10 @@
-import { ADD_TASK, COMPLETE_TASK, DELETE_TASK, EDIT_TASK, FILTERCOM_TASK, FILTERUNC_TASK, } from "../types";
+import { ADD_TASK, COMPLETE_TASK, DELETE_TASK, EDIT_TASK, FILTER_TASK,} from "../types";
 
 const initialState = {
   todos: [
-    { id: Math.random(), task: "Add filter to todo list", isDone: false },
+    { id: Math.random(), task: "Add filter to todo list", isDone: true },
+    { id: Math.random(), task: "Read Course API", isDone: false },
+    { id: Math.random(), task: "Complete MIS Brochure design", isDone: false },
     { id: Math.random(), task: "Retry counter redux", isDone: true },
     {
       id: Math.random(),
@@ -10,6 +12,7 @@ const initialState = {
       isDone: false,
     },
   ],
+  filter:false,
 };
 
 const todoReducer = (state = initialState, { type, payload }) => {
@@ -36,10 +39,8 @@ const todoReducer = (state = initialState, { type, payload }) => {
           elt.id === payload.id ? { ...elt, task: payload.value } : elt
         ),
       };
-    case FILTERCOM_TASK : 
-    return {...state,todos:state.isDone.filter((elt) => elt.isDone === true)};
-    case FILTERUNC_TASK :
-      return {...state,todos:state.isDone.filter((elt) => elt.isDone === false)};
+    case FILTER_TASK :
+      return {...state,filter:!state.filter}
     default:
       return state;
   }
